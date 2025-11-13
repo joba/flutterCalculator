@@ -1,7 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_calculator/widgets/display_widget.dart';
 
-class Calculator extends StatelessWidget {
+class Calculator extends StatefulWidget {
   const Calculator({super.key});
+
+  @override
+  State<Calculator> createState() => _CalculatorState();
+}
+
+class _CalculatorState extends State<Calculator> {
+  final String _displayText = "0";
+
+  // void _onButtonPressed(String value) {
+  //   setState(() {
+  //     _displayText += value;
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -11,19 +25,7 @@ class Calculator extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Container(
-              alignment: Alignment.centerRight,
-              margin: const EdgeInsets.all(20),
-              padding: const EdgeInsets.all(30),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(40)),
-                color: Colors.white,
-              ),
-              child: const Text(
-                'Calculator display UI',
-                style: TextStyle(color: Colors.black, fontSize: 26),
-              ),
-            ),
+            DisplayWidget(text: _displayText),
             Container(
               alignment: Alignment.center,
               margin: const EdgeInsets.all(20),
