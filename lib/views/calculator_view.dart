@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_calculator/widgets/display_widget.dart';
+import 'package:flutter_calculator/widgets/numpad_widget.dart';
 
 class Calculator extends StatefulWidget {
   const Calculator({super.key});
@@ -9,13 +10,21 @@ class Calculator extends StatefulWidget {
 }
 
 class _CalculatorState extends State<Calculator> {
-  final String _displayText = "0";
+  String _displayText = "";
 
-  // void _onButtonPressed(String value) {
-  //   setState(() {
-  //     _displayText += value;
-  //   });
-  // }
+  void _onButtonPressed(String value) {
+    setState(() {
+      if (value == 'C') {
+        _displayText = "";
+      } else if (value == '=') {
+        // Simple evaluation logic can be added here
+        // For now, just clear the display
+        _displayText = "";
+      } else {
+        _displayText += value;
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,15 +35,7 @@ class _CalculatorState extends State<Calculator> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             DisplayWidget(text: _displayText),
-            Container(
-              alignment: Alignment.center,
-              margin: const EdgeInsets.all(20),
-              color: Colors.grey[700],
-              child: const Text(
-                'Numpad and operations will be here',
-                style: TextStyle(color: Colors.white, fontSize: 18),
-              ),
-            ),
+            NumPadWidget(onButtonPressed: _onButtonPressed),
           ],
         ),
       ),
