@@ -43,7 +43,7 @@ class NumPadWidget extends StatelessWidget {
             style: ElevatedButton.styleFrom(
               backgroundColor: isOperator
                   ? Theme.of(context).colorScheme.primary
-                  : Colors.grey[800],
+                  : Colors.grey[700],
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(16),
               ),
