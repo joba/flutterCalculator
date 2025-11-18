@@ -10,7 +10,7 @@ class NumPadWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: ConstrainedBox(
-        constraints: BoxConstraints(maxWidth: 600),
+        constraints: BoxConstraints(maxWidth: maxWidth),
         child: LayoutBuilder(
           builder: (context, constraints) {
             final crossAxisCount = getCrossAxisCount(constraints.maxWidth);

@@ -40,6 +40,7 @@ class _CalculatorState extends State<Calculator> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Container(
+        width: double.infinity,
         color: Colors.grey[800],
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,

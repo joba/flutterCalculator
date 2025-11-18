@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 const breakpoint = 450;
+const double maxWidth = 600;
 
 final List<String> buttons = [
   'E',
