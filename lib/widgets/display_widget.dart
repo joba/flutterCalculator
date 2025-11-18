@@ -12,23 +12,23 @@ class DisplayWidget extends StatelessWidget {
       children: [
         Container(
           alignment: Alignment.centerRight,
-          margin: const EdgeInsets.fromLTRB(0, 20, 30, 0),
+          margin: const EdgeInsets.fromLTRB(0, 10, 30, 0),
           child: Text(
             labelText ?? "",
-            style: TextStyle(color: Colors.grey[600], fontSize: 24),
+            style: TextStyle(color: Colors.grey[600], fontSize: 22),
           ),
         ),
         Container(
           alignment: Alignment.centerRight,
-          margin: const EdgeInsets.fromLTRB(20, 5, 20, 20),
-          padding: const EdgeInsets.fromLTRB(30, 10, 30, 10),
+          margin: const EdgeInsets.fromLTRB(20, 5, 20, 5),
+          padding: const EdgeInsets.fromLTRB(30, 5, 30, 5),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(40)),
             color: Colors.white,
           ),
           child: Text(
             text,
-            style: const TextStyle(color: Colors.black, fontSize: 30),
+            style: const TextStyle(color: Colors.black, fontSize: 28),
           ),
         ),
       ],

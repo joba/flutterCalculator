@@ -18,13 +18,16 @@ class NumPadWidget extends StatelessWidget {
             final buttonAspectRatio = getButtonAspectRatio(
               constraints.maxWidth,
             );
+            final gridPaddingAndMargin = getGridPaddingAndMargin(
+              constraints.maxWidth,
+            );
 
             return GridView.builder(
-              padding: EdgeInsets.all(12),
+              padding: EdgeInsets.all(gridPaddingAndMargin),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: crossAxisCount,
-                mainAxisSpacing: 12,
-                crossAxisSpacing: 12,
+                mainAxisSpacing: gridPaddingAndMargin,
+                crossAxisSpacing: gridPaddingAndMargin,
                 childAspectRatio:
                     buttonAspectRatio, // Makes buttons slightly wider than tall
               ),
@@ -45,11 +48,7 @@ class NumPadWidget extends StatelessWidget {
                   onPressed: () => onButtonPressed(value),
                   child: Text(
                     value,
-                    style: TextStyle(
-                      fontSize: 28,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: TextStyle(fontSize: 26, color: Colors.grey[100]),
                   ),
                 );
               },

@@ -58,3 +58,7 @@ List<String> getButtons(double width) {
 double getButtonAspectRatio(double width) {
   return width > breakpoint ? 2 : 1;
 }
+
+double getGridPaddingAndMargin(double width) {
+  return width > breakpoint ? 6 : 12;
+}
