@@ -16,15 +16,22 @@ class _CalculatorState extends State<Calculator> {
 
   void _onButtonPressed(String value) {
     setState(() {
-      if (value == 'C') {
-        _displayText = "";
-        _labelText = null;
-      } else if (value == '=') {
-        _labelText = _displayText;
-        _displayText = calculate(_displayText);
-      } else {
-        // _labelText = null;
-        _displayText += value;
+      switch (value) {
+        case 'E':
+          if (_displayText.isNotEmpty) {
+            _displayText = _displayText.substring(0, _displayText.length - 1);
+          }
+          break;
+        case 'AC':
+          _displayText = "";
+          _labelText = null;
+          break;
+        case '=':
+          _labelText = _displayText;
+          _displayText = calculate(_displayText);
+          break;
+        default:
+          _displayText += value;
       }
     });
   }

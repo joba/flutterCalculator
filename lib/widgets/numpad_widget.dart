@@ -34,22 +34,17 @@ class NumPadWidget extends StatelessWidget {
               itemCount: buttons.length,
               itemBuilder: (context, index) {
                 final value = buttons[index];
-                final isOperator = ['+', '-', '×', '÷', '='].contains(value);
+                final button = getNumPadButton(value, context);
 
                 return ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: isOperator
-                        ? Theme.of(context).colorScheme.primary
-                        : Colors.grey[700],
+                    backgroundColor: button.backgroundColor,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16),
                     ),
                   ),
                   onPressed: () => onButtonPressed(value),
-                  child: Text(
-                    value,
-                    style: TextStyle(fontSize: 26, color: Colors.grey[100]),
-                  ),
+                  child: button.content,
                 );
               },
             );
