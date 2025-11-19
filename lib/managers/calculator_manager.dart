@@ -88,7 +88,8 @@ class CalculatorManager {
         break;
       default:
         if (displayText == "0" &&
-            !CalculatorButtons.operators.contains(value)) {
+            !CalculatorButtons.operators.contains(value) &&
+            value != '.') {
           displayText = value;
         } else {
           displayText += value;

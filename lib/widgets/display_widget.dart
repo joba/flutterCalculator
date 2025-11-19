@@ -18,7 +18,7 @@ class DisplayWidget extends StatelessWidget {
             margin: const EdgeInsets.fromLTRB(0, 10, 30, 0),
             child: Text(
               labelText ?? "",
-              style: TextStyle(color: Colors.grey[600], fontSize: 22),
+              style: TextStyle(color: Colors.grey[300], fontSize: 22),
             ),
           ),
           Container(
