@@ -30,8 +30,7 @@ class NumPadWidget extends StatelessWidget {
                 crossAxisCount: crossAxisCount,
                 mainAxisSpacing: gridPaddingAndMargin,
                 crossAxisSpacing: gridPaddingAndMargin,
-                childAspectRatio:
-                    buttonAspectRatio, // Makes buttons slightly wider than tall
+                childAspectRatio: buttonAspectRatio,
               ),
               itemCount: buttons.length,
               itemBuilder: (context, index) {
@@ -45,7 +44,8 @@ class NumPadWidget extends StatelessWidget {
                       borderRadius: BorderRadius.circular(16),
                     ),
                   ),
-                  onPressed: () => onButtonPressed(value),
+                  onPressed: () =>
+                      value.isEmpty ? null : onButtonPressed(value),
                   child: button.content,
                 );
               },

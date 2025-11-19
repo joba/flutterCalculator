@@ -26,8 +26,8 @@ double getButtonAspectRatio(double width) {
 
 Widget _getButtonContent(String value) {
   return value == CalculatorButtons.backspace
-      ? Icon(Icons.backspace_outlined, size: 26, color: Colors.grey[100])
-      : Text(value, style: TextStyle(fontSize: 26, color: Colors.grey[100]));
+      ? Icon(Icons.backspace_outlined, size: 26, color: Colors.grey[400])
+      : Text(value, style: TextStyle(fontSize: 26, color: Colors.grey[400]));
 }
 
 class CalculatorButtons {
