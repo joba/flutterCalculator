@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_calculator/utils/button_config.dart';
 import 'package:flutter_calculator/utils/calculate_utils.dart';
 import 'package:flutter_calculator/widgets/display_widget.dart';
 import 'package:flutter_calculator/widgets/numpad_widget.dart';
@@ -17,16 +18,16 @@ class _CalculatorState extends State<Calculator> {
   void _onButtonPressed(String value) {
     setState(() {
       switch (value) {
-        case 'E':
+        case CalculatorButtons.backspace:
           if (_displayText.isNotEmpty) {
             _displayText = _displayText.substring(0, _displayText.length - 1);
           }
           break;
-        case 'AC':
+        case CalculatorButtons.clear:
           _displayText = "";
           _labelText = null;
           break;
-        case '=':
+        case CalculatorButtons.equals:
           _labelText = _displayText;
           _displayText = calculate(_displayText);
           break;

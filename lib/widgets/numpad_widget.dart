@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_calculator/utils/layout_utils.dart';
+import 'package:flutter_calculator/utils/button_config.dart';
+import 'package:flutter_calculator/utils/layout_constants.dart';
+import 'package:flutter_calculator/utils/responsive_helpers.dart';
 
 class NumPadWidget extends StatelessWidget {
-  final Function(String) onButtonPressed;
+  final void Function(String) onButtonPressed;
 
   const NumPadWidget({super.key, required this.onButtonPressed});
 
@@ -28,8 +30,7 @@ class NumPadWidget extends StatelessWidget {
                 crossAxisCount: crossAxisCount,
                 mainAxisSpacing: gridPaddingAndMargin,
                 crossAxisSpacing: gridPaddingAndMargin,
-                childAspectRatio:
-                    buttonAspectRatio, // Makes buttons slightly wider than tall
+                childAspectRatio: buttonAspectRatio,
               ),
               itemCount: buttons.length,
               itemBuilder: (context, index) {
@@ -43,7 +44,8 @@ class NumPadWidget extends StatelessWidget {
                       borderRadius: BorderRadius.circular(16),
                     ),
                   ),
-                  onPressed: () => onButtonPressed(value),
+                  onPressed: () =>
+                      value.isEmpty ? null : onButtonPressed(value),
                   child: button.content,
                 );
               },
