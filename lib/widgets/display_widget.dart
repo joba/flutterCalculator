@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_calculator/utils/layout_utils.dart';
+import 'package:flutter_calculator/utils/layout_constants.dart';
 
 class DisplayWidget extends StatelessWidget {
   final String text;

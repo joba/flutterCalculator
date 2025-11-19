@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_calculator/utils/layout_utils.dart';
+import 'package:flutter_calculator/utils/button_config.dart';
+import 'package:flutter_calculator/utils/layout_constants.dart';
+import 'package:flutter_calculator/utils/responsive_helpers.dart';
 
 class NumPadWidget extends StatelessWidget {
-  final Function(String) onButtonPressed;
+  final void Function(String) onButtonPressed;
 
   const NumPadWidget({super.key, required this.onButtonPressed});
 
