@@ -29,16 +29,18 @@ class _CalculatorState extends State<Calculator> {
     _displayText = _calculatorManager.displayText;
     _labelText = _calculatorManager.labelText;
 
-    return SafeArea(
-      child: Container(
-        width: double.infinity,
-        color: Colors.grey[800],
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            DisplayWidget(text: _displayText, labelText: _labelText),
-            NumPadWidget(onButtonPressed: _onButtonPressed),
-          ],
+    return Container(
+      color: Colors.grey[600],
+      child: SafeArea(
+        child: SizedBox(
+          width: double.infinity,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              DisplayWidget(text: _displayText, labelText: _labelText),
+              NumPadWidget(onButtonPressed: _onButtonPressed),
+            ],
+          ),
         ),
       ),
     );

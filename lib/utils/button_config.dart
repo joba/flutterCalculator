@@ -19,6 +19,8 @@ double getButtonAspectRatio(double width) {
   return (
     backgroundColor: isOperator
         ? Theme.of(context).colorScheme.primary
+        : value.isEmpty
+        ? Colors.grey[600]
         : Colors.grey[700],
     content: _getButtonContent(value),
   );
