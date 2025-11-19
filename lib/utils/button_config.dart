@@ -34,6 +34,7 @@ class CalculatorButtons {
   static const String backspace = 'E';
   static const String clear = 'AC';
   static const String equals = '=';
+  static const String plusMinus = '+/-';
 
   static const List<String> operators = ['+', '-', '×', '÷', '='];
 
@@ -54,7 +55,7 @@ class CalculatorButtons {
     '2',
     '3',
     '+',
-    '',
+    plusMinus,
     '0',
     '.',
     equals,
@@ -76,7 +77,7 @@ class CalculatorButtons {
     '3',
     '',
     '-',
-    '',
+    plusMinus,
     '0',
     '.',
     equals,
