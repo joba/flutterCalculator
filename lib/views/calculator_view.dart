@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_calculator/utils/button_config.dart';
-import 'package:flutter_calculator/utils/calculate_utils.dart';
+import 'package:flutter_calculator/managers/calculator_manager.dart';
 import 'package:flutter_calculator/widgets/display_widget.dart';
 import 'package:flutter_calculator/widgets/numpad_widget.dart';
 
@@ -12,33 +11,24 @@ class Calculator extends StatefulWidget {
 }
 
 class _CalculatorState extends State<Calculator> {
+  final CalculatorManager _calculatorManager = CalculatorManager();
+
   String _displayText = "";
   String? _labelText;
 
   void _onButtonPressed(String value) {
     setState(() {
-      switch (value) {
-        case CalculatorButtons.backspace:
-          if (_displayText.isNotEmpty) {
-            _displayText = _displayText.substring(0, _displayText.length - 1);
-          }
-          break;
-        case CalculatorButtons.clear:
-          _displayText = "";
-          _labelText = null;
-          break;
-        case CalculatorButtons.equals:
-          _labelText = _displayText;
-          _displayText = calculate(_displayText);
-          break;
-        default:
-          _displayText += value;
-      }
+      _calculatorManager.handleButtonPress(value);
+      _displayText = _calculatorManager.displayText;
+      _labelText = _calculatorManager.labelText;
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    _displayText = _calculatorManager.displayText;
+    _labelText = _calculatorManager.labelText;
+
     return SafeArea(
       child: Container(
         width: double.infinity,
