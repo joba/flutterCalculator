@@ -16,7 +16,14 @@ class CalculatorManager {
         inputString.replaceAll('×', '*').replaceAll('÷', '/'),
       );
       num eval = RealEvaluator().evaluate(exp);
-      return eval.toString();
+      final result = eval.toString();
+      if (result.endsWith('.0')) {
+        return result.substring(0, result.length - 2);
+      }
+      if (result == 'Infinity') {
+        throw Exception('Division by zero');
+      }
+      return result;
     } catch (e) {
       return 'Error';
     }
